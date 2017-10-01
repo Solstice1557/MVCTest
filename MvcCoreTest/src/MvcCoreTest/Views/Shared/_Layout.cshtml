@@ -1,0 +1,63 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<AppUser> signInManager
+@inject UserManager<AppUser> userManager
+
+@{
+  var currentUser = await userManager.GetUserAsync(User);
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MvcCoreTest - @ViewData["Title"]</title>
+
+  <link rel="stylesheet" href="/bundle/main.css" asp-append-version="true"/>
+  @RenderSection("styles", required: false)
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">MvcCoreTest</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+
+          @if (currentUser != null)
+          {
+            if (currentUser.IsMaster)
+            {
+              <li><a asp-area="" asp-controller="Home" asp-action="Logout">Manager</a></li>
+            }
+
+            <li><a asp-area="" asp-controller="Home" asp-action="Logout">Logout</a></li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container body-content">
+    @RenderBody()
+    <hr />
+    <footer>
+      <p>&copy; 2017 - MvcCoreTest</p>
+    </footer>
+  </div>
+
+  <environment names="Development,Staging,Production">
+    <script src="~/bundle/main.js" asp-append-version="true"></script>
+  </environment>
+
+  @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserSettings>
+	<ToolsOptions>
+		<ToolsOptionsCategory RegisteredName="TextEditor" name="TextEditor">
+			<ToolsOptionsSubCategory PackageName="Text Management Package" RegisteredName="CSS" name="CSS">
+				<PropertyValue name="AutoListMembers">false</PropertyValue>
+				<PropertyValue name="AutoListParams">false</PropertyValue>
+				<PropertyValue name="BraceCompletion">true</PropertyValue>
+				<PropertyValue name="CutCopyBlankLines">true</PropertyValue>
+				<PropertyValue name="EnableLeftClickForURLs">true</PropertyValue>
+				<PropertyValue name="HideAdvancedMembers">true</PropertyValue>
+				<PropertyValue name="IndentSize">2</PropertyValue>
+				<PropertyValue name="IndentStyle">2</PropertyValue>
+				<PropertyValue name="InsertTabs">false</PropertyValue>
+				<PropertyValue name="OverviewWidth">58</PropertyValue>
+				<PropertyValue name="ShowAnnotations">true</PropertyValue>
+				<PropertyValue name="ShowCaretPosition">true</PropertyValue>
+				<PropertyValue name="ShowChanges">true</PropertyValue>
+				<PropertyValue name="ShowErrors">true</PropertyValue>
+				<PropertyValue name="ShowHorizontalScrollBar">true</PropertyValue>
+				<PropertyValue name="ShowLineNumbers">true</PropertyValue>
+				<PropertyValue name="ShowMarks">true</PropertyValue>
+				<PropertyValue name="ShowNavigationBar">true</PropertyValue>
+				<PropertyValue name="ShowPreview">true</PropertyValue>
+				<PropertyValue name="ShowVerticalScrollBar">true</PropertyValue>
+				<PropertyValue name="TabSize">2</PropertyValue>
+				<PropertyValue name="UseMapMode">false</PropertyValue>
+				<PropertyValue name="VirtualSpace">false</PropertyValue>
+				<PropertyValue name="WordWrap">false</PropertyValue>
+				<PropertyValue name="WordWrapGlyphs">true</PropertyValue>
+			</ToolsOptionsSubCategory>
+			<ToolsOptionsSubCategory PackageName="Text Management Package" RegisteredName="CSharp" name="CSharp">
+				<PropertyValue name="AutoListMembers">false</PropertyValue>
+				<PropertyValue name="AutoListParams">false</PropertyValue>
+				<PropertyValue name="BraceCompletion">true</PropertyValue>
+				<PropertyValue name="CutCopyBlankLines">true</PropertyValue>
+				<PropertyValue name="EnableLeftClickForURLs">true</PropertyValue>
+				<PropertyValue name="HideAdvancedMembers">true</PropertyValue>
+				<PropertyValue name="IndentSize">4</PropertyValue>
+				<PropertyValue name="IndentStyle">2</PropertyValue>
+				<PropertyValue name="InsertTabs">false</PropertyValue>
+				<PropertyValue name="OverviewWidth">58</PropertyValue>
+				<PropertyValue name="ShowAnnotations">true</PropertyValue>
+				<PropertyValue name="ShowCaretPosition">true</PropertyValue>
+				<PropertyValue name="ShowChanges">true</PropertyValue>
+				<PropertyValue name="ShowErrors">true</PropertyValue>
+				<PropertyValue name="ShowHorizontalScrollBar">true</PropertyValue>
+				<PropertyValue name="ShowLineNumbers">true</PropertyValue>
+				<PropertyValue name="ShowMarks">true</PropertyValue>
+				<PropertyValue name="ShowNavigationBar">true</PropertyValue>
+				<PropertyValue name="ShowPreview">true</PropertyValue>
+				<PropertyValue name="ShowVerticalScrollBar">true</PropertyValue>
+				<PropertyValue name="TabSize">4</PropertyValue>
+				<PropertyValue name="UseMapMode">false</PropertyValue>
+				<PropertyValue name="VirtualSpace">false</PropertyValue>
+				<PropertyValue name="WordWrap">false</PropertyValue>
+				<PropertyValue name="WordWrapGlyphs">true</PropertyValue>
+			</ToolsOptionsSubCategory>
+			<ToolsOptionsSubCategory PackageName="Text Management Package" RegisteredName="HTML" name="HTML">
+				<PropertyValue name="AutoListMembers">false</PropertyValue>
+				<PropertyValue name="AutoListParams">false</PropertyValue>
+				<PropertyValue name="BraceCompletion">true</PropertyValue>
+				<PropertyValue name="CutCopyBlankLines">true</PropertyValue>
+				<PropertyValue name="EnableLeftClickForURLs">true</PropertyValue>
+				<PropertyValue name="HideAdvancedMembers">true</PropertyValue>
+				<PropertyValue name="IndentSize">2</PropertyValue>
+				<PropertyValue name="IndentStyle">2</PropertyValue>
+				<PropertyValue name="InsertTabs">false</PropertyValue>
+				<PropertyValue name="OverviewWidth">58</PropertyValue>
+				<PropertyValue name="ShowAnnotations">true</PropertyValue>
+				<PropertyValue name="ShowCaretPosition">true</PropertyValue>
+				<PropertyValue name="ShowChanges">true</PropertyValue>
+				<PropertyValue name="ShowErrors">true</PropertyValue>
+				<PropertyValue name="ShowHorizontalScrollBar">true</PropertyValue>
+				<PropertyValue name="ShowLineNumbers">true</PropertyValue>
+				<PropertyValue name="ShowMarks">true</PropertyValue>
+				<PropertyValue name="ShowNavigationBar">false</PropertyValue>
+				<PropertyValue name="ShowPreview">true</PropertyValue>
+				<PropertyValue name="ShowVerticalScrollBar">true</PropertyValue>
+				<PropertyValue name="TabSize">2</PropertyValue>
+				<PropertyValue name="UseMapMode">false</PropertyValue>
+				<PropertyValue name="VirtualSpace">false</PropertyValue>
+				<PropertyValue name="WordWrap">false</PropertyValue>
+				<PropertyValue name="WordWrapGlyphs">true</PropertyValue>
+			</ToolsOptionsSubCategory>
+			<ToolsOptionsSubCategory PackageName="Text Management Package" RegisteredName="JavaScript" name="JavaScript">
+				<PropertyValue name="AutoListMembers">false</PropertyValue>
+				<PropertyValue name="AutoListParams">false</PropertyValue>
+				<PropertyValue name="BraceCompletion">true</PropertyValue>
+				<PropertyValue name="CutCopyBlankLines">true</PropertyValue>
+				<PropertyValue name="EnableLeftClickForURLs">true</PropertyValue>
+				<PropertyValue name="HideAdvancedMembers">true</PropertyValue>
+				<PropertyValue name="IndentSize">2</PropertyValue>
+				<PropertyValue name="IndentStyle">2</PropertyValue>
+				<PropertyValue name="InsertTabs">false</PropertyValue>
+				<PropertyValue name="OverviewWidth">58</PropertyValue>
+				<PropertyValue name="ShowAnnotations">true</PropertyValue>
+				<PropertyValue name="ShowCaretPosition">true</PropertyValue>
+				<PropertyValue name="ShowChanges">true</PropertyValue>
+				<PropertyValue name="ShowErrors">true</PropertyValue>
+				<PropertyValue name="ShowHorizontalScrollBar">true</PropertyValue>
+				<PropertyValue name="ShowLineNumbers">true</PropertyValue>
+				<PropertyValue name="ShowMarks">true</PropertyValue>
+				<PropertyValue name="ShowNavigationBar">true</PropertyValue>
+				<PropertyValue name="ShowPreview">true</PropertyValue>
+				<PropertyValue name="ShowVerticalScrollBar">true</PropertyValue>
+				<PropertyValue name="TabSize">2</PropertyValue>
+				<PropertyValue name="UseMapMode">false</PropertyValue>
+				<PropertyValue name="VirtualSpace">false</PropertyValue>
+				<PropertyValue name="WordWrap">false</PropertyValue>
+				<PropertyValue name="WordWrapGlyphs">true</PropertyValue>
+			</ToolsOptionsSubCategory>
+			<ToolsOptionsSubCategory PackageName="Text Management Package" RegisteredName="SQL Server Tools" name="SQL Server Tools">
+				<PropertyValue name="AutoListMembers">true</PropertyValue>
+				<PropertyValue name="AutoListParams">true</PropertyValue>
+				<PropertyValue name="BraceCompletion">false</PropertyValue>
+				<PropertyValue name="CutCopyBlankLines">true</PropertyValue>
+				<PropertyValue name="EnableLeftClickForURLs">true</PropertyValue>
+				<PropertyValue name="HideAdvancedMembers">true</PropertyValue>
+				<PropertyValue name="IndentSize">2</PropertyValue>
+				<PropertyValue name="IndentStyle">1</PropertyValue>
+				<PropertyValue name="InsertTabs">true</PropertyValue>
+				<PropertyValue name="OverviewWidth">58</PropertyValue>
+				<PropertyValue name="ShowAnnotations">true</PropertyValue>
+				<PropertyValue name="ShowCaretPosition">true</PropertyValue>
+				<PropertyValue name="ShowChanges">true</PropertyValue>
+				<PropertyValue name="ShowErrors">true</PropertyValue>
+				<PropertyValue name="ShowHorizontalScrollBar">true</PropertyValue>
+				<PropertyValue name="ShowLineNumbers">true</PropertyValue>
+				<PropertyValue name="ShowMarks">true</PropertyValue>
+				<PropertyValue name="ShowNavigationBar">false</PropertyValue>
+				<PropertyValue name="ShowPreview">true</PropertyValue>
+				<PropertyValue name="ShowVerticalScrollBar">true</PropertyValue>
+				<PropertyValue name="TabSize">2</PropertyValue>
+				<PropertyValue name="UseMapMode">false</PropertyValue>
+				<PropertyValue name="VirtualSpace">false</PropertyValue>
+				<PropertyValue name="WordWrap">false</PropertyValue>
+				<PropertyValue name="WordWrapGlyphs">true</PropertyValue>
+			</ToolsOptionsSubCategory>
+			<ToolsOptionsSubCategory PackageName="Text Management Package" RegisteredName="T-SQL90" name="T-SQL90">
+				<PropertyValue name="AutoListMembers">true</PropertyValue>
+				<PropertyValue name="AutoListParams">true</PropertyValue>
+				<PropertyValue name="BraceCompletion">false</PropertyValue>
+				<PropertyValue name="CutCopyBlankLines">true</PropertyValue>
+				<PropertyValue name="EnableLeftClickForURLs">true</PropertyValue>
+				<PropertyValue name="HideAdvancedMembers">true</PropertyValue>
+				<PropertyValue name="IndentSize">2</PropertyValue>
+				<PropertyValue name="IndentStyle">1</PropertyValue>
+				<PropertyValue name="InsertTabs">true</PropertyValue>
+				<PropertyValue name="OverviewWidth">58</PropertyValue>
+				<PropertyValue name="ShowAnnotations">true</PropertyValue>
+				<PropertyValue name="ShowCaretPosition">true</PropertyValue>
+				<PropertyValue name="ShowChanges">true</PropertyValue>
+				<PropertyValue name="ShowErrors">true</PropertyValue>
+				<PropertyValue name="ShowHorizontalScrollBar">true</PropertyValue>
+				<PropertyValue name="ShowLineNumbers">true</PropertyValue>
+				<PropertyValue name="ShowMarks">true</PropertyValue>
+				<PropertyValue name="ShowNavigationBar">false</PropertyValue>
+				<PropertyValue name="ShowPreview">true</PropertyValue>
+				<PropertyValue name="ShowVerticalScrollBar">true</PropertyValue>
+				<PropertyValue name="TabSize">2</PropertyValue>
+				<PropertyValue name="UseMapMode">false</PropertyValue>
+				<PropertyValue name="VirtualSpace">false</PropertyValue>
+				<PropertyValue name="WordWrap">false</PropertyValue>
+				<PropertyValue name="WordWrapGlyphs">true</PropertyValue>
+			</ToolsOptionsSubCategory>
+			<ToolsOptionsSubCategory PackageName="Text Management Package" RegisteredName="XML" name="XML">
+				<PropertyValue name="AutoListMembers">true</PropertyValue>
+				<PropertyValue name="AutoListParams">true</PropertyValue>
+				<PropertyValue name="BraceCompletion">false</PropertyValue>
+				<PropertyValue name="CutCopyBlankLines">true</PropertyValue>
+				<PropertyValue name="EnableLeftClickForURLs">true</PropertyValue>
+				<PropertyValue name="HideAdvancedMembers">true</PropertyValue>
+				<PropertyValue name="IndentSize">2</PropertyValue>
+				<PropertyValue name="IndentStyle">2</PropertyValue>
+				<PropertyValue name="InsertTabs">false</PropertyValue>
+				<PropertyValue name="OverviewWidth">58</PropertyValue>
+				<PropertyValue name="ShowAnnotations">true</PropertyValue>
+				<PropertyValue name="ShowCaretPosition">true</PropertyValue>
+				<PropertyValue name="ShowChanges">true</PropertyValue>
+				<PropertyValue name="ShowErrors">true</PropertyValue>
+				<PropertyValue name="ShowHorizontalScrollBar">true</PropertyValue>
+				<PropertyValue name="ShowLineNumbers">true</PropertyValue>
+				<PropertyValue name="ShowMarks">true</PropertyValue>
+				<PropertyValue name="ShowNavigationBar">false</PropertyValue>
+				<PropertyValue name="ShowPreview">true</PropertyValue>
+				<PropertyValue name="ShowVerticalScrollBar">true</PropertyValue>
+				<PropertyValue name="TabSize">2</PropertyValue>
+				<PropertyValue name="UseMapMode">false</PropertyValue>
+				<PropertyValue name="VirtualSpace">false</PropertyValue>
+				<PropertyValue name="WordWrap">false</PropertyValue>
+				<PropertyValue name="WordWrapGlyphs">true</PropertyValue>
+			</ToolsOptionsSubCategory>
+			<ToolsOptionsSubCategory PackageName="Text Management Package" RegisteredName="JSON" name="JSON">
+				<PropertyValue name="AutoListMembers">true</PropertyValue>
+				<PropertyValue name="AutoListParams">true</PropertyValue>
+				<PropertyValue name="BraceCompletion">true</PropertyValue>
+				<PropertyValue name="CutCopyBlankLines">true</PropertyValue>
+				<PropertyValue name="EnableLeftClickForURLs">true</PropertyValue>
+				<PropertyValue name="HideAdvancedMembers">true</PropertyValue>
+				<PropertyValue name="IndentSize">4</PropertyValue>
+				<PropertyValue name="IndentStyle">2</PropertyValue>
+				<PropertyValue name="InsertTabs">false</PropertyValue>
+				<PropertyValue name="OverviewWidth">58</PropertyValue>
+				<PropertyValue name="ShowAnnotations">true</PropertyValue>
+				<PropertyValue name="ShowCaretPosition">true</PropertyValue>
+				<PropertyValue name="ShowChanges">true</PropertyValue>
+				<PropertyValue name="ShowErrors">true</PropertyValue>
+				<PropertyValue name="ShowHorizontalScrollBar">true</PropertyValue>
+				<PropertyValue name="ShowLineNumbers">false</PropertyValue>
+				<PropertyValue name="ShowMarks">true</PropertyValue>
+				<PropertyValue name="ShowNavigationBar">false</PropertyValue>
+				<PropertyValue name="ShowPreview">true</PropertyValue>
+				<PropertyValue name="ShowVerticalScrollBar">true</PropertyValue>
+				<PropertyValue name="TabSize">4</PropertyValue>
+				<PropertyValue name="UseMapMode">false</PropertyValue>
+				<PropertyValue name="VirtualSpace">false</PropertyValue>
+				<PropertyValue name="WordWrap">false</PropertyValue>
+				<PropertyValue name="WordWrapGlyphs">false</PropertyValue>
+			</ToolsOptionsSubCategory>
+			<ToolsOptionsSubCategory PackageName="Text Management Package" RegisteredName="SCSS" name="SCSS">
+				<PropertyValue name="AutoListMembers">true</PropertyValue>
+				<PropertyValue name="AutoListParams">true</PropertyValue>
+				<PropertyValue name="BraceCompletion">true</PropertyValue>
+				<PropertyValue name="CutCopyBlankLines">true</PropertyValue>
+				<PropertyValue name="EnableLeftClickForURLs">true</PropertyValue>
+				<PropertyValue name="HideAdvancedMembers">true</PropertyValue>
+				<PropertyValue name="IndentSize">2</PropertyValue>
+				<PropertyValue name="IndentStyle">2</PropertyValue>
+				<PropertyValue name="InsertTabs">false</PropertyValue>
+				<PropertyValue name="OverviewWidth">58</PropertyValue>
+				<PropertyValue name="ShowAnnotations">true</PropertyValue>
+				<PropertyValue name="ShowCaretPosition">true</PropertyValue>
+				<PropertyValue name="ShowChanges">true</PropertyValue>
+				<PropertyValue name="ShowErrors">true</PropertyValue>
+				<PropertyValue name="ShowHorizontalScrollBar">true</PropertyValue>
+				<PropertyValue name="ShowLineNumbers">false</PropertyValue>
+				<PropertyValue name="ShowMarks">true</PropertyValue>
+				<PropertyValue name="ShowNavigationBar">false</PropertyValue>
+				<PropertyValue name="ShowPreview">true</PropertyValue>
+				<PropertyValue name="ShowVerticalScrollBar">true</PropertyValue>
+				<PropertyValue name="TabSize">2</PropertyValue>
+				<PropertyValue name="UseMapMode">false</PropertyValue>
+				<PropertyValue name="VirtualSpace">false</PropertyValue>
+				<PropertyValue name="WordWrap">false</PropertyValue>
+				<PropertyValue name="WordWrapGlyphs">false</PropertyValue>
+			</ToolsOptionsSubCategory>
+		</ToolsOptionsCategory>
+	</ToolsOptions>
+</UserSettings>
