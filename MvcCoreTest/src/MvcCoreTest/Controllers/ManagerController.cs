@@ -57,7 +57,8 @@
             var hub = this.connectionManager.GetHubContext<UsersHub>();
             foreach (var connectionId in connectionIds)
             {
-                hub.Clients.Client(connectionId).reset("asdasd");
+                hub.Clients.Client(connectionId).reset("reset");
+                this.connectionStorage.RemoveConnection(connectionId);
             }
 
             return true;

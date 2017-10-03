@@ -10,8 +10,8 @@
 
         IList<string> GetConnectionIds(string userName);
 
-        void AddConnection(string connectionId, string userName, bool master);
+        bool AddConnection(string connectionId, string userName, bool master);
 
-        void RemoveConnection(string connectionId);
+        bool RemoveConnection(string connectionId);
     }
 }

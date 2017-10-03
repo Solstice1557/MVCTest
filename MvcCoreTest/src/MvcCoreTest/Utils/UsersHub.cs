@@ -19,13 +19,36 @@
             await base.OnConnected();
             var userName = this.Context.User?.Identity?.Name;
             var isMaster = this.Context.User?.IsInRole("master") ?? false;
-            this.connectionStorage.AddConnection(this.Context.ConnectionId, userName, isMaster);
+            var result = this.connectionStorage.AddConnection(this.Context.ConnectionId, userName, isMaster);
+
+            if (result)
+            {
+                this.UpdateOnMaster();
+            }
         }
 
         public override async Task OnDisconnected(bool stopCalled)
         {
             await base.OnDisconnected(stopCalled);
-            this.connectionStorage.RemoveConnection(this.Context.ConnectionId);
+            var result = this.connectionStorage.RemoveConnection(this.Context.ConnectionId);
+            if (result)
+            {
+                this.UpdateOnMaster();
+            }
+        }
+
+        private void UpdateOnMaster()
+        {
+            var masterConnectionIds =
+                this.connectionStorage.GetAllConnections()
+                    .Where(c => c.IsMaster)
+                    .SelectMany(c => this.connectionStorage.GetConnectionIds(c.UserName))
+                    .ToList();
+
+            foreach (var connectionId in masterConnectionIds)
+            {
+                this.Clients.Client(connectionId).update("update");
+            }
         }
     }
 }

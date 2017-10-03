@@ -35,7 +35,13 @@ refreshClients();
 
 $("#usersTable").on("click", `button[${userButtonAttr}]`, function() {
   var userName = $(this).attr("data-connected-user");
-  managerService.kickClient(userName).then(function() {
-    refreshClients();
+  managerService.kickClient(userName).then(function(resp) {
+    if (resp) {
+      refreshClients();
+    }
   });
 });
+
+window.document.addEventListener("clientsUpdated", function(e) {
+    refreshClients();
+  }, false);
