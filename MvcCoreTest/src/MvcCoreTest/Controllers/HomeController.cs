@@ -25,7 +25,7 @@
 
         [HttpGet]
         [AllowAnonymous]
-        public async Task<IActionResult> Login(string returnUrl = null)
+        public IActionResult Login(string returnUrl = null)
         {
             this.ViewData["ReturnUrl"] = returnUrl;
             return this.View();
@@ -76,6 +76,13 @@
         {
             var user = await this.GetCurrentUser();
             return this.View(user);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "master")]
+        public IActionResult Manager()
+        {
+            return this.View();
         }
 
         [HttpGet]

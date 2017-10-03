@@ -11,7 +11,8 @@
 
   module.exports = {
     entry: {
-      main: "./wwwroot/js/main.js"
+      main: "./wwwroot/js/main.js",
+      manager: "./wwwroot/js/manager.js"
     },
 
     devtool: "source-map",
@@ -23,7 +24,11 @@
 
     plugins: [
       new CleanWebpackPlugin([bundleFolder]),
-      new UglifyJSPlugin(),
+      new UglifyJSPlugin({
+        compress: { warnings: false },
+        output: { comments: false },
+        sourceMap: true
+      }),
       new ExtractTextPlugin({
         filename: "[name].css",
         allChunks: true
@@ -50,7 +55,16 @@
         { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: "url-loader" }
       ],
       rules: [
-        
+        {
+          test: /\.js$/,
+          exclude: /(node_modules|bower_components)/,
+          use: {
+            loader: "babel-loader",
+            options: {
+              presets: ["es2015"]
+            }
+          }
+        },
         {
           test: /\.scss$/,
           use: ExtractTextPlugin.extract(

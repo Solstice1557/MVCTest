@@ -2,7 +2,6 @@
 {
     using System;
 
-    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Identity;
@@ -11,6 +10,7 @@
     using Microsoft.Extensions.Logging;
 
     using MvcCoreTest.Auth;
+    using MvcCoreTest.Utils;
 
     public class Startup
     {
@@ -32,35 +32,44 @@
             services.AddOptions();
             services.Configure<UsersConfiguration>(this.Configuration.GetSection("usersConfig"));
 
-            services.AddIdentity<AppUser, AppRole>().AddDefaultTokenProviders();
+            services.AddIdentity<AppUser, AppRole>(
+                identityOptions =>
+                    {
+                        identityOptions.SecurityStampValidationInterval = TimeSpan.Zero;
+                    }).AddDefaultTokenProviders();
 
             services.AddTransient<IUserStore<AppUser>, UserStore>();
             services.AddTransient<IRoleStore<AppRole>, RoleStore>();
+            services.AddSingleton<IConnectionStorage, ConnectionStorage>();
+            services.AddSingleton<IAppUserSecurityStampStore, AppUserSecurityStampStore>();
 
             services.AddMvc();
+            services.AddRouting();
 
             services.Configure<IdentityOptions>(options =>
             {
-                // Password settings
                 options.Password.RequireDigit = false;
                 options.Password.RequiredLength = 2;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireLowercase = false;
 
-                // Lockout settings
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
                 options.Lockout.MaxFailedAccessAttempts = 5;
 
-                // Cookie settings
                 options.Cookies.ApplicationCookie.ExpireTimeSpan = TimeSpan.FromDays(150);
                 options.Cookies.ApplicationCookie.LoginPath = "/Home/LogIn";
                 options.Cookies.ApplicationCookie.LogoutPath = "/Home/LogOut";
                 options.Cookies.ApplicationCookie.AccessDeniedPath = "/Home/AccessDenied";
 
-                // User settings
                 options.User.RequireUniqueEmail = false;
             });
+
+            services.AddSignalR(
+                options =>
+                    {
+                        options.Hubs.EnableDetailedErrors = true;
+                    });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -81,12 +90,18 @@
 
             app.UseIdentity();
             app.UseStaticFiles();
+            app.UseWebSockets();
+            app.UseSignalR();
 
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+                routes.MapRoute(
+                    name: "api",
+                    template: "api/{controller}/{action}/{id?}");
             });
         }
     }

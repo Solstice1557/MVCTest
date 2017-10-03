@@ -32,6 +32,7 @@
         "jquery": "^3.2.1",
         "popper.js": "^1.12.5",
         "bootstrap": "~3.3.7",
-        "bootstrap-sass": "^3.3.7"
+        "bootstrap-sass": "^3.3.7",
+        "signalr-no-jquery": "^0.1.8"
     }
 }

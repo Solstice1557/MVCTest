@@ -16,13 +16,18 @@
                              IUserLoginStore<AppUser>,
                              IUserRoleStore<AppUser>,
                              IUserPasswordStore<AppUser>,
-                             IUserEmailStore<AppUser>
+                             IUserEmailStore<AppUser>,
+                             IUserSecurityStampStore<AppUser>
     {
         private readonly IOptions<UsersConfiguration> usersConfiguration;
+        private readonly IAppUserSecurityStampStore appUserSecurityStampStore;
 
-        public UserStore(IOptions<UsersConfiguration> usersConfiguration)
+        public UserStore(
+            IOptions<UsersConfiguration> usersConfiguration, 
+            IAppUserSecurityStampStore appUserSecurityStampStore)
         {
             this.usersConfiguration = usersConfiguration;
+            this.appUserSecurityStampStore = appUserSecurityStampStore;
         }
 
         public void Dispose()
@@ -217,6 +222,17 @@
         public Task SetNormalizedEmailAsync(AppUser user, string normalizedEmail, CancellationToken cancellationToken)
         {
             return Task.FromResult(0);
+        }
+
+        public Task SetSecurityStampAsync(AppUser user, string stamp, CancellationToken cancellationToken)
+        {
+            this.appUserSecurityStampStore.SetSecurityStamp(user.UserName, stamp);
+            return Task.FromResult(0);
+        }
+
+        public Task<string> GetSecurityStampAsync(AppUser user, CancellationToken cancellationToken)
+        {
+            return Task.FromResult(this.appUserSecurityStampStore.GetSecurityStamp(user.UserName));
         }
     }
 }
