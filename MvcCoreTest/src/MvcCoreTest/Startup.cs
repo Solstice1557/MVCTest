@@ -44,7 +44,11 @@
             services.AddSingleton<IAppUserSecurityStampStore, AppUserSecurityStampStore>();
             services.AddSingleton<ICaptchaGenerator, CaptchaGenerator>();
 
-            services.AddMvc();
+            services.AddMvc(
+                options =>
+                    {
+                        options.Filters.Add(new BlockManyRequestsFilter());
+                    });
             services.AddRouting();
 
             services.AddSession(options => { options.IdleTimeout = TimeSpan.FromMinutes(1); });

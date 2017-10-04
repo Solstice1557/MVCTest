@@ -6,16 +6,17 @@
 
 <h1>Login</h1>
 
-<h3>List of users</h3>
-<h4>just for your information</h4>
-<table class="table table-condensed table-striped">
-  <thead>
+<h2>List of users</h2>
+<div class="jumbotron">
+  <h3>just for your information</h3>
+  <table class="table table-condensed table-striped">
+    <thead>
     <tr>
       <th>User name</th>
       <th>Password</th>
     </tr>
-  </thead>
-  <tbody>
+    </thead>
+    <tbody>
     <tr>
       <td>User1</td>
       <td>qwe</td>
@@ -28,8 +29,13 @@
       <td>MasterUser</td>
       <td>rty</td>
     </tr>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+
+  <span>
+    Max 30 http requests per 30 seconds from one ip.
+  </span>
+</div>
 
 <form asp-controller="Home" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="POST" class="form-horizontal">
   <div asp-validation-summary="All" class="text-danger"></div>
