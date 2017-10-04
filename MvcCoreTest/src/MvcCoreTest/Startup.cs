@@ -42,9 +42,12 @@
             services.AddTransient<IRoleStore<AppRole>, RoleStore>();
             services.AddSingleton<IConnectionStorage, ConnectionStorage>();
             services.AddSingleton<IAppUserSecurityStampStore, AppUserSecurityStampStore>();
+            services.AddSingleton<ICaptchaGenerator, CaptchaGenerator>();
 
             services.AddMvc();
             services.AddRouting();
+
+            services.AddSession(options => { options.IdleTimeout = TimeSpan.FromMinutes(1); });
 
             services.Configure<IdentityOptions>(options =>
             {
@@ -92,6 +95,7 @@
             app.UseStaticFiles();
             app.UseWebSockets();
             app.UseSignalR();
+            app.UseSession();
 
             app.UseMvc(routes =>
             {

@@ -1,5 +1,7 @@
 ﻿namespace MvcCoreTest.Controllers
 {
+    using System;
+    using System.Text;
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Authorization;
@@ -8,19 +10,27 @@
 
     using MvcCoreTest.Auth;
     using MvcCoreTest.Model;
+    using MvcCoreTest.Utils;
 
     using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
     [Authorize]
     public class HomeController : Controller
     {
+        private const string CaptchaSessionVarName = "CaptchaImageStr";
+
         private readonly SignInManager<AppUser> signInManager;
         private readonly UserManager<AppUser> userManager;
+        private readonly ICaptchaGenerator captchaGenerator;
 
-        public HomeController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager)
+        public HomeController(
+            SignInManager<AppUser> signInManager, 
+            UserManager<AppUser> userManager, 
+            ICaptchaGenerator captchaGenerator)
         {
             this.signInManager = signInManager;
             this.userManager = userManager;
+            this.captchaGenerator = captchaGenerator;
         }
 
         [HttpGet]
@@ -40,6 +50,25 @@
 
             if (!this.ModelState.IsValid)
             {
+                return this.View(model);
+            }
+
+            byte[] captchaStringBytes;
+            if (!this.HttpContext.Session.TryGetValue(CaptchaSessionVarName, out captchaStringBytes) 
+                || captchaStringBytes == null
+                || captchaStringBytes.Length == 0)
+            {
+                model.Captcha = string.Empty;
+                this.ModelState.AddModelError("Captcha", "Wrong captcha.");
+                return this.View(model);
+            }
+
+            var savedCaptchaString = Encoding.UTF8.GetString(captchaStringBytes);
+            if (string.IsNullOrEmpty(savedCaptchaString) 
+                || !string.Equals(savedCaptchaString, model.Captcha, StringComparison.CurrentCultureIgnoreCase))
+            {
+                model.Captcha = string.Empty;
+                this.ModelState.AddModelError("Captcha", "Wrong captcha.");
                 return this.View(model);
             }
 
@@ -96,6 +125,21 @@
         public IActionResult Error()
         {
             return this.View();
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Captcha()
+        {
+            if (!this.HttpContext.Session.IsAvailable)
+            {
+                throw new InvalidOperationException();
+            }
+
+            var captcha = this.captchaGenerator.Generate();
+            this.HttpContext.Session.Set(CaptchaSessionVarName, Encoding.UTF8.GetBytes(captcha.Item2));
+
+            return this.File(captcha.Item1, "image/jpeg");
         }
 
         private async Task<AppUser> GetCurrentUser()
