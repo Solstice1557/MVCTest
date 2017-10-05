@@ -1,6 +1,10 @@
 ﻿namespace MvcCoreTest.Controllers
 {
     using System;
+    using System.Globalization;
+    using System.IO;
+    using System.Linq;
+    using System.Security.Cryptography;
     using System.Text;
     using System.Threading.Tasks;
 
@@ -140,6 +144,77 @@
             this.HttpContext.Session.Set(CaptchaSessionVarName, Encoding.UTF8.GetBytes(captcha.Item2));
 
             return this.File(captcha.Item1, "image/jpeg");
+        }
+
+        [HttpPost]
+        public IActionResult Crypt(string textToCrypt)
+        {
+            var rnd = new Random();
+            var key = Enumerable.Range(0, 32).Select(i => (byte)rnd.Next(255)).ToArray();
+
+            var model = new EncryptModel();
+            byte[] encrypteContent;
+            byte[] iv;
+            using (var aes = Aes.Create())
+            {
+                using (var encryptor = aes.CreateEncryptor(key, aes.IV))
+                {
+                    using (var msEncrypt = new MemoryStream())
+                    {
+                        using (var csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                        {
+                            using (var swEncrypt = new StreamWriter(csEncrypt))
+                            {
+                                swEncrypt.Write(textToCrypt);
+                            }
+
+                            iv = aes.IV;
+
+                            encrypteContent = msEncrypt.ToArray();
+                            model.EncryptedText = Convert.ToBase64String(encrypteContent);
+                        }
+                    }
+                }
+            }
+            
+            byte[] encryptedKey;
+            RSAParameters parameters;
+            using (var rsa = RSA.Create())
+            {
+                rsa.KeySize = 2048;
+                parameters = rsa.ExportParameters(true);
+                encryptedKey = rsa.Encrypt(key, RSAEncryptionPadding.Pkcs1);
+                model.EncryptedKey = Convert.ToBase64String(encryptedKey);
+            }
+
+            byte[] decryptedKey;
+            
+            using (var rsa = RSA.Create())
+            {
+                rsa.KeySize = 2048;
+                rsa.ImportParameters(parameters);
+                decryptedKey = rsa.Decrypt(encryptedKey, RSAEncryptionPadding.Pkcs1);
+                model.DecryptedKey = Convert.ToBase64String(decryptedKey);
+            }
+
+            using (var aesAlg = Aes.Create())
+            {
+                using (var decryptor = aesAlg.CreateDecryptor(decryptedKey, iv))
+                {
+                    using (var msDecrypt = new MemoryStream(encrypteContent))
+                    {
+                        using (var csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                        {
+                            using (var srDecrypt = new StreamReader(csDecrypt))
+                            {
+                                model.DecryptedText = srDecrypt.ReadToEnd();
+                            }
+                        }
+                    }
+                }
+            }
+
+            return this.View(model);
         }
 
         private async Task<AppUser> GetCurrentUser()

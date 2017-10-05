@@ -26,7 +26,8 @@
         "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
         "Gray.Microsoft.AspNetCore.SignalR.Server": "0.2.0-alpha1",
         "Microsoft.AspNetCore.WebSockets": "1.0.2",
-        "CoreCompat.System.Drawing": "1.0.0-beta006"
+        "CoreCompat.System.Drawing": "1.0.0-beta006",
+        "System.Security.Cryptography.Algorithms":  "4.3.0"
     },
 
     "tools": {

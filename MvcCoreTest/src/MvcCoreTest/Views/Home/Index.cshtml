@@ -7,3 +7,12 @@
 <p>
   You are logged in as @Model.UserName
 </p>
+
+<form method="POST" asp-controller="Home" asp-action="Crypt" >
+  <fieldset class="form-group">
+    <label for="textToCrypt" class="control-label"></label>
+    <textarea class="form-control" name="textToCrypt" id="textToCrypt" required=""></textarea>
+  </fieldset>
+
+  <button type="submit" class="btn btn-primary">Encrypt</button>
+</form>

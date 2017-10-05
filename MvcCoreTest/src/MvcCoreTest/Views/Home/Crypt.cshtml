@@ -1,0 +1,22 @@
+﻿@model EncryptModel
+
+@{
+    ViewData["Title"] = "Encrypt Page";
+}
+
+<div class="row">
+  <div class="col-xs-2">Encrypted key: </div>
+  <div class="col-xs-10">@Model.EncryptedKey</div>
+</div>
+<div class="row">
+  <div class="col-xs-2">Decrypted Key: </div>
+  <div class="col-xs-10">@Model.DecryptedKey</div>
+</div>
+<div class="row">
+  <div class="col-xs-2">EncryptedText: </div>
+  <div class="col-xs-10">@Model.EncryptedText</div>
+</div>
+<div class="row">
+  <div class="col-xs-2">DecryptedText: </div>
+  <div class="col-xs-10">@Model.DecryptedText</div>
+</div>
